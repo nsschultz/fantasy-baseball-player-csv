@@ -24,7 +24,7 @@ namespace FantasyBaseball.PlayerServiceCsv.UnitTests.Controllers
             service.VerifyAll();
         }
 
-        [Fact] public void UpsertPlayersTest() 
+        [Fact] public void OverwritePlayersTest() 
         {
             var data = new PlayerCollection { Players = new List<BaseballPlayer> { new BaseballPlayer() } };
             var section = new Mock<IConfigurationSection>();
@@ -37,15 +37,15 @@ namespace FantasyBaseball.PlayerServiceCsv.UnitTests.Controllers
             sortService.Setup(o => o.SortPlayers(It.Is<List<BaseballPlayer>>(p => p.Count == 1))).Returns(new List<BaseballPlayer> { new BaseballPlayer() });
             var service = new Mock<ICsvFileWriterService>();
             service.Setup(o => o.WriteCsvData("players.csv", It.Is<List<BaseballPlayer>>(p => p.Count == 1)));
-            new PlayerController(null, service.Object, config.Object, sortService.Object, cleanService.Object).UpsertPlayers(data);
+            new PlayerController(null, service.Object, config.Object, sortService.Object, cleanService.Object).OverwritePlayers(data);
             service.VerifyAll();
         }
 
-        [Fact] public void UpsertPlayersTestNullPlayerCollection() => 
-            Assert.Throws<BadRequestException>(() => new PlayerController(null, null, null, null, null).UpsertPlayers(null));
+        [Fact] public void OverwritePlayersTestNullPlayerCollection() => 
+            Assert.Throws<BadRequestException>(() => new PlayerController(null, null, null, null, null).OverwritePlayers(null));
 
-        [Fact] public void UpsertPlayersTestNullPlayerList() => 
+        [Fact] public void OverwritePlayersTestNullPlayerList() => 
             Assert.Throws<BadRequestException>(() => 
-                new PlayerController(null, null, null, null, null).UpsertPlayers(new PlayerCollection { Players = null }));
+                new PlayerController(null, null, null, null, null).OverwritePlayers(new PlayerCollection { Players = null }));
     }
 }

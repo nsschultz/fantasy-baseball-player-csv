@@ -39,9 +39,9 @@ namespace FantasyBaseball.PlayerServiceCsv.Controllers
         [HttpGet] public PlayerCollection GetPlayers() => 
             new PlayerCollection { Players = _readerService.ReadCsvData(_configuration.GetValue<string>("CsvFiles:PlayerFile")) };
 
-        /// <summary>Upserts all of the players into the source.</summary>
-        /// <param name="players">All of the players to upsert into the source.</param>
-        [HttpPost] public void UpsertPlayers(PlayerCollection players)
+        /// <summary>Overwrites all of the players in the source with this collection.</summary>
+        /// <param name="players">All of the players to to store in the source.</param>
+        [HttpPost] public void OverwritePlayers(PlayerCollection players)
         {
             if (players == null || players.Players ==  null) throw new BadRequestException("Players not set");
             var playerList = _cleanService.CleanData(players.Players);
