@@ -1,4 +1,4 @@
-using FantasyBaseball.CommonModels.Exceptions;
+using FantasyBaseball.Common.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.FileProviders;

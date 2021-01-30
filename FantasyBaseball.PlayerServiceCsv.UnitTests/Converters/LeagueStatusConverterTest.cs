@@ -1,8 +1,7 @@
-using FantasyBaseball.CommonModels.Enums;
-using FantasyBaseball.PlayerServiceCsv.Converters;
+using FantasyBaseball.Common.Enums;
 using Xunit;
 
-namespace FantasyBaseball.PlayerServiceCsv.UnitTests.Converters
+namespace FantasyBaseball.PlayerServiceCsv.Converters.UnitTests
 {
     public class LeagueStatusConverterTest
     {

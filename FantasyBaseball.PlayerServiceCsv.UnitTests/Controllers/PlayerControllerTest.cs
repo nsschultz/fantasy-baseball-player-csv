@@ -1,13 +1,12 @@
 using System.Collections.Generic;
-using FantasyBaseball.CommonModels.Exceptions;
-using FantasyBaseball.CommonModels.Player;
-using FantasyBaseball.PlayerServiceCsv.Controllers;
+using FantasyBaseball.Common.Exceptions;
+using FantasyBaseball.Common.Models;
 using FantasyBaseball.PlayerServiceCsv.Services;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using Xunit;
 
-namespace FantasyBaseball.PlayerServiceCsv.UnitTests.Controllers
+namespace FantasyBaseball.PlayerServiceCsv.Controllers.UnitTests
 {
     public class PlayerControllerTest
     {

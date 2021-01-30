@@ -1,13 +1,14 @@
-using FantasyBaseball.CommonModels.Exceptions;
-using FantasyBaseball.PlayerServiceCsv.Services;
+using FantasyBaseball.Common.Exceptions;
 using Xunit;
 
-namespace FantasyBaseball.PlayerServiceCsv.UnitTests.Services
+namespace FantasyBaseball.PlayerServiceCsv.Services.UnitTests
 {
     public class CsvFileReaderServiceTest
     {
-        [Fact] public void BadFileTest() => Assert.Throws<CsvFileException>(() => new CsvFileReaderService().ReadCsvData("bad.csv"));
+        [Fact] public void BadFileTest() => 
+            Assert.Throws<CsvFileException>(() => new CsvFileReaderService().ReadCsvData("bad.csv"));
 
-        [Fact] public void NullFileTest() => Assert.Throws<CsvFileException>(() => new CsvFileReaderService().ReadCsvData(null));
+        [Fact] public void NullFileTest() => 
+            Assert.Throws<CsvFileException>(() => new CsvFileReaderService().ReadCsvData(null));
     }
 }

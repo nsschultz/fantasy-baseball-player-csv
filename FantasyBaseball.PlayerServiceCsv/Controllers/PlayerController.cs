@@ -1,5 +1,5 @@
-using FantasyBaseball.CommonModels.Exceptions;
-using FantasyBaseball.CommonModels.Player;
+using FantasyBaseball.Common.Exceptions;
+using FantasyBaseball.Common.Models;
 using FantasyBaseball.PlayerServiceCsv.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;

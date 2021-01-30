@@ -3,8 +3,8 @@ using System.Globalization;
 using System.IO;
 using CsvHelper;
 using CsvHelper.Configuration;
-using FantasyBaseball.CommonModels.Exceptions;
-using FantasyBaseball.CommonModels.Player;
+using FantasyBaseball.Common.Exceptions;
+using FantasyBaseball.Common.Models;
 using FantasyBaseball.PlayerServiceCsv.CsvMaps;
 
 namespace FantasyBaseball.PlayerServiceCsv.Services
