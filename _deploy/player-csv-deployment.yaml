@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: player-csv
-        image: nschultz/fantasy-baseball-player-csv:0.5.4
+        image: nschultz/fantasy-baseball-player-csv:0.6.0
         volumeMounts:
         - name: player-csv-data-volume
           mountPath: "/app/data"
