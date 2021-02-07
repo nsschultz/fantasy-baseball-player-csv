@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using FantasyBaseball.CommonModels.Player;
+using FantasyBaseball.Common.Models;
 
 namespace FantasyBaseball.PlayerServiceCsv.Services
 {
@@ -12,10 +12,10 @@ namespace FantasyBaseball.PlayerServiceCsv.Services
         /// <returns>The sorted collection of players.</returns>
         public List<BaseballPlayer> SortPlayers(List<BaseballPlayer> players) => 
             players
-                .OrderBy(p => p.PlayerInfo.Type)
-                .ThenBy(p => p.PlayerInfo.LastName.ToUpper())
-                .ThenBy(p => p.PlayerInfo.FirstName.ToUpper())
-                .ThenBy(p => p.PlayerInfo.Id)
+                .OrderBy(p => p.Type)
+                .ThenBy(p => p.LastName.ToUpper())
+                .ThenBy(p => p.FirstName.ToUpper())
+                .ThenBy(p => p.BhqId)
                 .ToList();
     }
 }

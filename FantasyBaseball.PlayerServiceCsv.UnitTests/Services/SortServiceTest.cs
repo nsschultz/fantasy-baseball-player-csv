@@ -1,10 +1,9 @@
 using System.Collections.Generic;
-using FantasyBaseball.CommonModels.Enums;
-using FantasyBaseball.CommonModels.Player;
-using FantasyBaseball.PlayerServiceCsv.Services;
+using FantasyBaseball.Common.Enums;
+using FantasyBaseball.Common.Models;
 using Xunit;
 
-namespace FantasyBaseball.PlayerServiceCsv.UnitTests.Services
+namespace FantasyBaseball.PlayerServiceCsv.Services.UnitTests
 {
     public class SortServiceTest
     {
@@ -20,15 +19,15 @@ namespace FantasyBaseball.PlayerServiceCsv.UnitTests.Services
                 BuildPlayer(5, "first", "Last", PlayerType.U)
             };
             var sortedList = new SortService().SortPlayers(playerList);
-            Assert.Equal(3, sortedList[0].PlayerInfo.Id);
-            Assert.Equal(5, sortedList[1].PlayerInfo.Id);
-            Assert.Equal(4, sortedList[2].PlayerInfo.Id);
-            Assert.Equal(2, sortedList[3].PlayerInfo.Id);
-            Assert.Equal(1, sortedList[4].PlayerInfo.Id);
-            Assert.Equal(0, sortedList[5].PlayerInfo.Id);
+            Assert.Equal(3, sortedList[0].BhqId);
+            Assert.Equal(5, sortedList[1].BhqId);
+            Assert.Equal(4, sortedList[2].BhqId);
+            Assert.Equal(2, sortedList[3].BhqId);
+            Assert.Equal(1, sortedList[4].BhqId);
+            Assert.Equal(0, sortedList[5].BhqId);
         }
 
-        private static BaseballPlayer BuildPlayer(int id, string first, string last, PlayerType type) =>
-            new BaseballPlayer { PlayerInfo = new PlayerInfo { Id = id, FirstName = first, LastName = last, Type = type } };
+        private static BaseballPlayer BuildPlayer(int id, string first, string last, PlayerType type) => 
+            new BaseballPlayer { BhqId = id, FirstName = first, LastName = last, Type = type };
     }
 }

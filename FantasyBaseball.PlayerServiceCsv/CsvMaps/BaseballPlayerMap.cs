@@ -1,5 +1,5 @@
 using CsvHelper.Configuration;
-using FantasyBaseball.CommonModels.Player;
+using FantasyBaseball.Common.Models;
 using FantasyBaseball.PlayerServiceCsv.Converters;
 
 namespace FantasyBaseball.PlayerServiceCsv.CsvMaps
@@ -10,22 +10,22 @@ namespace FantasyBaseball.PlayerServiceCsv.CsvMaps
         /// <summary>Creates a new instance of the mapper.</summary>
         public BaseballPlayerMap()
         {
-            Map(m => m.PlayerInfo.Id).Index(0).Name("..PLAYER ID");
-            Map(m => m.PlayerInfo.FirstName).Index(1).Name("..FIRST NAME");
-            Map(m => m.PlayerInfo.LastName).Index(2).Name("..LAST NAME");
-            Map(m => m.PlayerInfo.Age).Index(3).Name("..AGE");
-            Map(m => m.PlayerInfo.Type).Index(4).Name("..TYPE").TypeConverter<PlayerTypeConverter>();
-            Map(m => m.PlayerInfo.Positions).Index(5).Name("..POSITION(S)");
-            Map(m => m.PlayerInfo.Team).Index(6).Name("..TEAM");
-            Map(m => m.PlayerInfo.Status).Index(7).Name("..STATUS").TypeConverter<PlayerStatusConverter>();
-            Map(m => m.LeagueInfo.League1).Index(8).Name("..LEAGUE #1").TypeConverter<LeagueStatusConverter>();
-            Map(m => m.LeagueInfo.League2).Index(9).Name("..LEAGUE #2").TypeConverter<LeagueStatusConverter>();
-            Map(m => m.DraftInfo.DraftRank).Index(10).Name("..D-RANK");
-            Map(m => m.DraftInfo.AverageDraftPick).Index(11).Name("..ADP");
-            Map(m => m.DraftInfo.HighestPick).Index(12).Name("..HP");
-            Map(m => m.DraftInfo.DraftedPercentage).Index(13).Name("..% DRAFTED");
-            Map(m => m.BhqScores.Reliability).Index(14).Name("..REL");
-            Map(m => m.BhqScores.MayberryMethod).Index(15).Name("..MM");
+            Map(m => m.BhqId).Index(0).Name("..PLAYER ID");
+            Map(m => m.FirstName).Index(1).Name("..FIRST NAME");
+            Map(m => m.LastName).Index(2).Name("..LAST NAME");
+            Map(m => m.Age).Index(3).Name("..AGE");
+            Map(m => m.Type).Index(4).Name("..TYPE").TypeConverter<PlayerTypeConverter>();
+            Map(m => m.Positions).Index(5).Name("..POSITION(S)");
+            Map(m => m.Team).Index(6).Name("..TEAM");
+            Map(m => m.Status).Index(7).Name("..STATUS").TypeConverter<PlayerStatusConverter>();
+            Map(m => m.League1).Index(8).Name("..LEAGUE #1").TypeConverter<LeagueStatusConverter>();
+            Map(m => m.League2).Index(9).Name("..LEAGUE #2").TypeConverter<LeagueStatusConverter>();
+            Map(m => m.DraftRank).Index(10).Name("..D-RANK");
+            Map(m => m.AverageDraftPick).Index(11).Name("..ADP");
+            Map(m => m.HighestPick).Index(12).Name("..HP");
+            Map(m => m.DraftedPercentage).Index(13).Name("..% DRAFTED");
+            Map(m => m.Reliability).Index(14).Name("..REL");
+            Map(m => m.MayberryMethod).Index(15).Name("..MM");
             Map(m => m.YearToDateBattingStats.AtBats).Index(16).Name("B.YTD.AB");
             Map(m => m.YearToDateBattingStats.Runs).Index(17).Name("B.YTD.R");
             Map(m => m.YearToDateBattingStats.Hits).Index(18).Name("B.YTD.H");

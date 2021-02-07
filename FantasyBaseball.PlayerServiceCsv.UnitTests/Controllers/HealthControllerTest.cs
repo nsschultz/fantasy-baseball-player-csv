@@ -1,11 +1,10 @@
-using FantasyBaseball.CommonModels.Exceptions;
-using FantasyBaseball.PlayerServiceCsv.Controllers;
+using FantasyBaseball.Common.Exceptions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.FileProviders;
 using Moq;
 using Xunit;
 
-namespace FantasyBaseball.PlayerServiceCsv.UnitTests.Controllers
+namespace FantasyBaseball.PlayerServiceCsv.Controllers.UnitTests
 {
     public class HealthControllerTest
     {
